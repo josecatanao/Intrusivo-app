@@ -1,20 +1,22 @@
 import { colors } from "@/src/theme/colors";
 import { fontFamily } from "@/src/theme/fontFamily";
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, StyleProp, StyleSheet, Text, ViewStyle } from "react-native";
 
 type ButtonProps = {
     title: string;
     onPress?: () => void;
     disabled?: boolean;
+    style?: StyleProp<ViewStyle>;
 };
 
-export default function Button({ title, onPress, disabled = false, }: ButtonProps) {
+export default function Button({ title, onPress, disabled = false,style }: ButtonProps) {
     return (
         <Pressable
             onPress={onPress}
             disabled={disabled}
             style={({ pressed }) => [
                 styles.button,
+                style,
                 { opacity: pressed ? 0.6 : 1 },
             ]}
         >
@@ -31,7 +33,6 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 47,
         borderRadius: 10
     },
     titleButton: {
