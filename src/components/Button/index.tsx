@@ -5,17 +5,19 @@ import { Pressable, StyleProp, StyleSheet, Text, ViewStyle } from "react-native"
 type ButtonProps = {
     title: string;
     onPress?: () => void;
+    width?:number;
     disabled?: boolean;
     style?: StyleProp<ViewStyle>;
 };
 
-export default function Button({ title, onPress, disabled = false,style }: ButtonProps) {
+export default function Button({ title, onPress, disabled = false,style, width=322}: ButtonProps) {
     return (
         <Pressable
             onPress={onPress}
             disabled={disabled}
             style={({ pressed }) => [
                 styles.button,
+                {width:width},
                 style,
                 { opacity: pressed ? 0.6 : 1 },
             ]}

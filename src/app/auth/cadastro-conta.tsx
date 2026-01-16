@@ -1,3 +1,4 @@
+import Button from "@/src/components/Button";
 import Input from "@/src/components/Input";
 import Logo from "@/src/components/Logo";
 import ViewBackground from "@/src/components/ViewBackground";
@@ -5,7 +6,7 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { router } from "expo-router";
-import { Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import IconeUser from "../../assets/icons/iconeUser.svg";
 import Blur from "../../assets/images/blur.svg";
 import { styles } from "./styles/cadastro-conta.styles";
@@ -13,6 +14,7 @@ import { styles } from "./styles/cadastro-conta.styles";
 export default function CadastroConta() {
     return (
         <ViewBackground>
+           
             <Blur style={styles.blur} />
             <View style={styles.blocoHeader}>
                 <TouchableOpacity onPress={() => router.back()}>
@@ -21,6 +23,7 @@ export default function CadastroConta() {
                 <Logo width={119} />
                 <View style={{ width: 24 }}></View>
             </View>
+             <ScrollView>
             <View style={styles.blocoApresentacao}>
                 <IconeUser />
                 <Text style={styles.titulo}>Crie sua conta</Text>
@@ -67,6 +70,13 @@ export default function CadastroConta() {
                         iconName="lock-reset" />
                 </View>
             </View>
+
+            <Button width={339} title="Cadastrar" />
+
+            <TouchableOpacity onPress={() => router.push("./login-email-senha")} style={styles.buttonCriarConta}>
+                <Text style={styles.textButtonCriarConta}>Já possui uma conta? <Text style={styles.textButtonCriar}>Entrar</Text></Text>
+            </TouchableOpacity>
+            </ScrollView>
         </ViewBackground>
     )
 } 

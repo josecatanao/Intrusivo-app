@@ -41,7 +41,8 @@ export const styles = StyleSheet.create({
     blocoInputs: {
         alignSelf: "center",
         marginTop: 30,
-        gap:20
+        gap: 20,
+        marginBottom: 35
     },
     label: {
         color: colors.light,
@@ -50,8 +51,21 @@ export const styles = StyleSheet.create({
     },
     blocoInput: {
         gap: 8
+    },
+    buttonCriarConta: {
+        marginTop: 35,
+        flexDirection: "row",
+        alignSelf: "center",
+        marginBottom: 30
+    },
+    textButtonCriarConta: {
+        color: "#767C8A",
+        fontFamily: fontFamily.medium,
+        fontSize: 14
+    },
+    textButtonCriar: {
+        color: "#197FE6",
+        fontFamily: fontFamily.semibold,
+        textDecorationLine: "underline"
     }
-
-
-
 })
