@@ -7,7 +7,7 @@ type Background = {
 } 
 
 export default function ViewBackground({children}:Background){
-    return (<SafeAreaView style={Styles.Component}>
+    return (<SafeAreaView style={Styles.Component} edges={["left", "right", "top"]}>
                 {children}
            </SafeAreaView>
     )

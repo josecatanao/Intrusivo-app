@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
         marginTop: 35,
         flexDirection: "row",
         alignSelf: "center",
-        marginBottom: 30
+        marginBottom: 60
     },
     textButtonCriarConta: {
         color: "#767C8A",
