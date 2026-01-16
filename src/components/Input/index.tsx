@@ -4,38 +4,45 @@ import { Pressable, TextInput, View } from "react-native";
 import { styles } from "./styles";
 
 type InputProps = {
-    iconLeft: keyof typeof MaterialIcons.glyphMap;
-    onChangeText: (text: string) => void;
-    placeholder: string;
-    senha?: boolean;
+  iconLeft: React.ComponentType<any>;
+  iconName: string;
+  onChangeText: (text: string) => void;
+  placeholder: string;
+  senha?: boolean;
+  width?:number;
 };
 
 export default function Input({
-    iconLeft,
-    onChangeText,
-    placeholder,
-    senha = false,
+  iconLeft: IconLeft,
+  iconName,
+  onChangeText,
+  placeholder,
+  width=322,
+  senha = false,
 }: InputProps) {
+  const [verSenha, setVerSenha] = useState(false);
 
-    const [verSenha, setVerSenha] = useState(false)
+  return (
+    <View style={[styles.container,{width:width}]}>
+      <IconLeft name={iconName} size={22} color="#768DA4" />
 
-    return (
-        <View style={styles.container}>
-            <MaterialIcons name={iconLeft} size={22} color="#95AFCA" />
+      <TextInput
+        onChangeText={onChangeText}
+        placeholder={placeholder}
+        placeholderTextColor="#95AFCA"
+        secureTextEntry={senha && !verSenha}
+        style={styles.input}
+      />
 
-            <TextInput
-                onChangeText={onChangeText}
-                placeholder={placeholder}
-                placeholderTextColor="#95AFCA"
-                secureTextEntry={senha && !verSenha}
-                style={styles.input}
-            />
-
-            {senha && (
-                <Pressable onPress={() => setVerSenha(prev => !prev)}>
-                    <MaterialIcons name="remove-red-eye" size={22} color="#95AFCA" />
-                </Pressable>
-            )}
-        </View>
-    );
+      {senha && (
+        <Pressable onPress={() => setVerSenha(prev => !prev)}>
+          <MaterialIcons
+            name={verSenha ? "visibility-off" : "visibility"}
+            size={22}
+            color="#95AFCA"
+          />
+        </Pressable>
+      )}
+    </View>
+  );
 }

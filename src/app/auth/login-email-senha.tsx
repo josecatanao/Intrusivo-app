@@ -3,7 +3,8 @@ import Input from "@/src/components/Input";
 import Logo from "@/src/components/Logo";
 import SubButton from "@/src/components/SubButton";
 import ViewBackground from "@/src/components/ViewBackground";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { router } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
 import IconeGoogle from "../../assets/icons/icone-google.svg";
@@ -20,8 +21,8 @@ export default function LoginEmailSenha() {
                 <Text style={styles.subTitulo}>Faça login para acessar seu diário seguro.</Text>
             </View>
             <View style={styles.blocoInput}>
-                <Input onChangeText={() => ""} placeholder="Digite seu e-mail" iconLeft="email" />
-                <Input onChangeText={() => ""} placeholder="Digite sua senha" iconLeft="lock" senha={true} />
+                    <Input onChangeText={() => ""} placeholder="Digite seu e-mail" iconName="email" iconLeft={MaterialIcons} />
+                    <Input onChangeText={() => ""} placeholder="Digite sua senha" iconName="lock" iconLeft={MaterialIcons} senha={true} />
                 <View style={styles.blocoSubButton}>
                     <SubButton title="Esqueceu sua senha?" />
                 </View>

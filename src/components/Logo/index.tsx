@@ -1,10 +1,14 @@
 import { StyleSheet, View } from "react-native";
 import LogoIntrusivo from "../../assets/icons/logo.svg";
 
-export default function Logo() {
+type LogoProps ={
+    width?:number;
+}
+
+export default function Logo({width = 184}:LogoProps) {
     return (
         <View style={styles.blocoLogo}>
-            <LogoIntrusivo width={184} height={100} />
+            <LogoIntrusivo width={width} height={100} />
         </View>
     );
 }
