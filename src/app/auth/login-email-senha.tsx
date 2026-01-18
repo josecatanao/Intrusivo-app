@@ -27,12 +27,12 @@ export default function LoginEmailSenha() {
                     <SubButton title="Esqueceu sua senha?" />
                 </View>
             </View>
-            <Button title="Entrar" />
+            <Button onPress={() => router.push("../private/(tabs)/home")} title="Entrar" />
 
             <View style={styles.blocoSeparador}>
                 <View style={styles.line}></View>
                 <Text style={styles.TextLine}>OU ENTRE COM</Text>
-                <View style={styles.line}></View>
+                <View style={styles.line}></View> 
             </View>
 
             <View style={styles.blocoEntrarAG}>
